@@ -1,10 +1,19 @@
+let capyX = 0;
+let capyY = 0;
+
 function setup() {
   let myCanvas = createCanvas(400,400);
   myCanvas.parent("canvas-parent");
   background(182,225,155);
 }
+function draw(){
+  drawBackground(400,400);
+  drawCapybara(capyX,capyY);
 
-function draw() {
+  capyX = capyX + 1;
+  capyY = capyY + 1;
+}
+function drawBackground(x,y) {
   //---------- Background -------------------------
   push();
   //puddle
@@ -19,8 +28,9 @@ function draw() {
     arc(150, 270, 40, 40, 0, PI + QUARTER_PI)
 
   pop();
-
+}
   //---------- Creature--- -------------------------
+  function drawCapybara(x,y,bodyColor, headColor){
   push();
 
     translate(130,130);
